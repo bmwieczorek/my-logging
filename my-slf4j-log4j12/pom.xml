@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <version>1.0-SNAPSHOT</version>
+        <groupId>com.bawi</groupId>
+        <artifactId>my-logging</artifactId>
+    </parent>
+
+    <artifactId>my-slf4j-log4j12</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+
+        <!--
+        Requires log4j.properties or log4j.xml otherwise:
+
+        log4j:WARN No appenders could be found for logger (com.bawi.MyLoggingAppLog4j12).
+        log4j:WARN Please initialize the log4j system properly.
+        log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+
+        log4j does not provide a default configuration since output to the console or to the file system may be prohibited in some environments.
+        -->
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <!-- testing -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>
